@@ -25,19 +25,25 @@ export default {
 
 <template>
   <div>
-    <h1>AI Content Generator</h1>
+    <h1>AI Story For Children Generator</h1>
     <textarea
+      cols="80"
+      rows="5"
       v-model="prompt"
-      placeholder="Enter your prompt here..."
+      placeholder="Enter the theme here..."
     ></textarea>
     <div>
       <button @click="generateContent">Generate</button>
     </div>
     <div v-if="response">
       <h2>Generated Content:</h2>
-      <p>{{ response }}</p>
+      <span class="result" v-html="response"></span>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.result {
+  padding: 1rem;
+}
+</style>
